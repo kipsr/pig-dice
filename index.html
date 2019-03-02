@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
     <link href="css/styles.css" rel="stylesheet" type="text/css">
-    <script src="js/jquery-1.12.0.js"></script>
+    <script   src="https://code.jquery.com/jquery-3.3.1.min.js"   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="   crossorigin="anonymous"></script>
     <script src="js/scripts.js"></script>
     <title>Pig-Dice-Game</title>
 </head>
@@ -41,9 +41,22 @@
     <div class="player">
         <button id="start-game-again" class="btn-danger btn">START A NEW GAME</button>
         <div class="row">
-            <div class="col-md-4">
-                <h2>First Player:<span id="FirstPlayerName"</h2>
+            <div class="col-md-3">
+                <h2>First Player:<span id="FirstPlayerName"></span></h2>
+                <button id="FirstPlayer-rolldice" class="btn-danger btn">Roll Dice</button> 
+                <button id="FirstPlayer-holddice" class="btn-danger btn">Hold Dice</button>  
+                <h2>Rolling Dice <span id="roll-dice-1"></span></h2>  
+                <p>First Round Total <span id="round1-total-score"></span></p> 
+                <p>Total score <span id="Total-score"></span></p>
             </div>
+            <div class="col-md-3">
+                    <h2>Second Player:<span id="SecondPlayerName"></span></h2>
+                    <button id="SecondPlayer-rolldice" class="btn-danger btn">Roll Dice</button> 
+                    <button id="SecondPlayer-holddice" class="btn-danger btn">Hold Dice</button>  
+                    <h2>Rolling Dice <span id="roll-dice-2"></span></h2>  
+                    <p>Second Round Total <span id="round2-total-score"></span></p> 
+                    <p>Total score <span id="Total-score"></span></p>
+                </div>
         </div>
 
     </div>
