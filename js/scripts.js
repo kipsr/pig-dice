@@ -38,3 +38,15 @@ Participant.prototype.startDiceGame=function(){
     this.participant="";
 
 }
+var values=function(){
+    $("#firstplayer").val("");
+    $("#secondplayer").val("");
+}
+//user interface logic
+$(document).ready(function(){
+    $("button#click").click(function(event){
+        firstplayer=new Participant(true);
+        secondplayer=new Participant(false);
+
+    })
+})
