@@ -47,8 +47,15 @@ $(document).ready(function(){
     $("button#click").click(function(event){
         firstplayer=new Participant(true);
         secondplayer=new Participant(false);
-        $(#player).show();
-        $()
+        $(".player").show();
+        $("#start-game-again").hide();
+
+        var firstplayer=$(".playerone").val();
+        $("#firstplayer").text(firstplayerName);
+
+        var  secondplayer=$(".playertwo").val();
+        $("#secondplayer").text(secondplayerName);
+
 
     })
 })
