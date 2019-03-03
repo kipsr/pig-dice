@@ -61,6 +61,13 @@ $(document).ready(function(){
 
     });
     $("button#start-game-again").click(function(event){
-        
+       $(".player").hide();
+       values();
+       firstplayer.newGame();
+       secondplayer.newGame();
+       $("#round1-total-score").empty();
+       $("#total-score").empty();
+       $("#roll-dice-1").empty();
+
     })
 })
