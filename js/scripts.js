@@ -12,4 +12,8 @@ function Participant(turn){
     this.turn=turn;
     this.nameofPlayer=nameofPlayer;
 }
-Participant.prototype.rollonce
+Participant.prototype.rollonce=function(){
+    if(this.rolldice===1){
+        
+    }
+}
