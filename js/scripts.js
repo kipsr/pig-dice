@@ -1,0 +1,3 @@
+var firstplayer;
+var secondplayer;
+
