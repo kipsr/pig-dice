@@ -15,7 +15,7 @@ function Participant(turn){
 Participant.prototype.rollonce=function(){
     if(this.rolldice===1){
         this.dicescore=0;
-        alert(this.nameofPlayer+"you turn is over you have rolled once")
+        alert(this.nameofPlayer+"your turn is over you have rolled once")
     }
     else{
         this.dicescore+=this.rolldice;
@@ -47,6 +47,8 @@ $(document).ready(function(){
     $("button#click").click(function(event){
         firstplayer=new Participant(true);
         secondplayer=new Participant(false);
+        $(#player).show();
+        $()
 
     })
 })
