@@ -36,5 +36,5 @@ Participant.prototype.startDiceGame=function(){
     this.dicescore=0;
     this.totalscore=0;
     this.participant="";
-    
+
 }
