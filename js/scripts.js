@@ -1,3 +1,4 @@
+//Backend interface
 var firstplayer="";
 var secondplayer="";
 
@@ -76,6 +77,14 @@ $(document).ready(function(){
     });
     $("button#firstPlayer-rolldice").click(function(event){
         firstplayer.roll=diceThrow();
-        
-    })
+        $("#roll-dice-1").text(firstplayer.roll);
+        firstplayer.rollone();
+        $("#round1-total-score").text(firstplayer.dicescore);
+
+    });
+    $("button#secondPlayer-rolldice").click(function(event){
+        secondplayer.roll=diceThrow();
+        $("#roll-dice-1").text(secondplayer.roll);
+        secondplayer.rollone();
+        $("#round1-total-score").text(secondplayer.dicescore);
 })
