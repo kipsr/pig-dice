@@ -71,6 +71,11 @@ $(document).ready(function(){
        $("#round2-total-score").empty();
        $("#total2-score").empty();
        $("#roll-dice-2").empty();
+       $("#start").empty();
 
+    });
+    $("button#firstPlayer-rolldice").click(function(event){
+        firstplayer.roll=diceThrow();
+        
     })
 })
