@@ -21,3 +21,20 @@ Participant.prototype.rollonce=function(){
         this.dicescore+=this.rolldice;
     }
 };
+Participant.prototype.holddice=function(){
+    this.totalscore+=this.dicescore;
+    this.dicescore=o;
+    alert(this.nameofPlayer+"you time of playing is over, next player")
+}
+Participant.prototype.overallwinner=function(){
+    if(this.totalscore>=100);
+    alert(this.nameofPlayer+"WINNER!!!");
+}
+
+Participant.prototype.startDiceGame=function(){
+    this.rolldice=0;
+    this.dicescore=0;
+    this.totalscore=0;
+    this.participant="";
+    
+}
