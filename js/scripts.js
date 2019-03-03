@@ -56,6 +56,11 @@ $(document).ready(function(){
         var  secondplayer=$(".playertwo").val();
         $("#secondplayer").text(secondplayerName);
 
+        firstplayer.participantname=firstplayerName;
+        secondplayer.participantname=secondplayerName;
 
+    });
+    $("button#start-game-again").click(function(event){
+        
     })
 })
