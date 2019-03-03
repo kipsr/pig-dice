@@ -93,7 +93,17 @@ $(document).ready(function(){
         firstplayer.hold();
         $("#total1-score").text(firstplayer.totalscore);
         $("#round1-total-score").empty();
-        
+        $("#roll-dice-1").empty();
+        firstplayer.winnerCheck();
+
         
     });
-})
+    $("button#secondPlayer-holddice").click(function(event){
+        secondplayer.hold();
+        $("#total2-score").text(firstplayer.totalscore);
+        $("#round2-total-score").empty();
+        $("#roll-dice-2").empty();
+        secondplayer.winnerCheck();
+    });
+
+});
