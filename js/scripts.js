@@ -86,5 +86,14 @@ $(document).ready(function(){
         secondplayer.roll=diceThrow();
         $("#roll-dice-1").text(secondplayer.roll);
         secondplayer.rollone();
-        $("#round1-total-score").text(secondplayer.dicescore);
+        $("#round2-total-score").text(secondplayer.dicescore);
+
+    });
+    $("button#firstPlayer-holddice").click(function(event){
+        firstplayer.hold();
+        $("#total1-score").text(firstplayer.totalscore);
+        $("#round1-total-score").empty();
+        
+        
+    });
 })
