@@ -15,8 +15,12 @@ If you find a bug (the website couldn't handle the query and / or gave undesired
 If you'd like to request a new function, feel free to do so by contacting us. Please include sample queries and their corresponding results.
 
 # BDD
+| behavior that we'll need to write code to handle | outputs                                                                          |
+|--------------------------------------------------|----------------------------------------------------------------------------------|
+| If the player rolls a 1                          | they score nothing and it becomes the next player's turn.                        |
+| If the player rolls any other number             | it is added to their turn total and the player's turn continues.                 |
+| If a player chooses to "hold",                   | their turn total is added to their score, and it becomes the next player's turn. |
 
-| The student should choose the correct answer     | By ticking any of the answers provided in the input forms | the students is awarded five points for every correct answer and o pints in case of a wrong answer |
 
 
 
