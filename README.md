@@ -1,10 +1,17 @@
-# quiz-board.github.io
- Creating multi-choice questions to be answered on the website.
-# Quiz board
-#### This is a multichoice questions for students which should be answered on a website
+# pig-dice
+creating a pig-dice game.
+# Pig dice game
+#### This is a pig dice game which should be played by two players
 #### By 1 contributor kipsr
 ## Description
-In context, your high school has started an after-school computer club and they really need your help! The club is finishing a course on Javascript and the students will have to take a test before completing. The school has therefore asked you to create a website on which students can take the test. They will answer the multiple choice questions on the website, which you'll have created and after submitting their answers, they know what they scored on the website.
+Each turn, a player repeatedly rolls a die until either a 1 is rolled or the player decides to "hold":
+
+If the player rolls a 1, they score nothing and it becomes the next player's turn.
+If the player rolls any other number, it is added to their turn total and the player's turn continues.
+If a player chooses to "hold", their turn total is added to their score, and it becomes the next player's turn.
+The first player to score 100 or more points wins.
+
+For example, the first player, Anne, begins a turn with a roll of 5. Anne could hold and score 5 points, but chooses to roll again. Anne rolls a 2, and could hold with a turn total of 7 points, but chooses to roll again. Anne rolls a 1, and must end her turn without scoring. The next player, Bob, rolls the sequence 4-5-3-5-5, after which he chooses to hold, and adds his turn total of 22 points to his score.
 ## Setup/Installation Requirements
 * Software which can open and HTML file, this iclude varous browsers which can open and HTML file.
 
