@@ -1,71 +1,74 @@
-//Backend interface
+//Business interface
+
 var firstplayer="";
 var secondplayer="";
 
-var rolldice=function(){
-    return Math.floor(Math.floor.random())+1;
+var throwdice=function(){
+    return Math.floor(6 * Math.random())+1;
 
 }
-function Participant(turn){
-    this.rolldice=0;
-    this.dicescore=0;
+function Player(turn){
+    this.roll=0;
+    this.tempscore=0;
     this.totalscore=0;
     this.turn=turn;
-    this.nameofPlayer=nameofPlayer;
+    this.nameofPlayer;   
 }
-Participant.prototype.rollonce=function(){
-    if(this.rolldice===1){
-        this.dicescore=0;
+//checking for one
+Player.prototype.rollone=function(){
+    if(this.roll===1){
+        this.tempscore=0;
         alert(this.nameofPlayer+"your turn is over you have rolled once")
     }
     else{
-        this.dicescore+=this.rolldice;
+        this.tempscore+=this.roll;
     }
 };
-Participant.prototype.holddice=function(){
-    this.totalscore+=this.dicescore;
-    this.dicescore=o;
+Player.prototype.hold=function(){
+    this.totalscore+=this.tempscore;
+    this.tempscore=o;
     alert(this.nameofPlayer+"you time of playing is over, next player")
 }
-Participant.prototype.overallwinner=function(){
+Player.prototype.winnerCheck=function(){
     if(this.totalscore>=100);
     alert(this.nameofPlayer+"WINNER!!!");
 }
 
-Participant.prototype.startDiceGame=function(){
-    this.rolldice=0;
-    this.dicescore=0;
+Player.prototype.newGame=function(){
+    this.roll=0;
+    this.tempscore=0;
     this.totalscore=0;
-    this.participant="";
+    this.nameofPlayer="";
 
 }
-var values=function(){
+var clearvalues=function(){
     $("#firstplayer").val("");
     $("#secondplayer").val("");
 }
 //user interface logic
 $(document).ready(function(){
     $("button#click").click(function(event){
-        firstplayer=new Participant(true);
-        secondplayer=new Participant(false);
+        firstplayern=new Player(true);
+        secondplayer=new Player(false);
         $(".player").show();
         $("#start-game-again").hide();
 
-        var firstplayer=$(".playerone").val();
+        var firstplayerName=$(".playerone").val();
         $("#firstplayer").text(firstplayerName);
 
-        var  secondplayer=$(".playertwo").val();
+        var  secondplayerName=$(".playertwo").val();
         $("#secondplayer").text(secondplayerName);
 
-        firstplayer.participantname=firstplayerName;
-        secondplayer.participantname=secondplayerName;
+        firstplayer.PlayerName=firstplayerName;
+        secondplayer.PlayerName=secondplayerName;
 
     });
     $("button#start-game-again").click(function(event){
        $(".player").hide();
-       values();
-       firstplayer.newGame();
-       secondplayer.newGame();
+       clearvalues();    
+       
+    //    firstplayer.newGame();
+    //    secondplayer.newGame();
        $("#round1-total-score").empty();
        $("#total1-score").empty();
        $("#roll-dice-1").empty();
@@ -76,20 +79,20 @@ $(document).ready(function(){
 
     });
     $("button#firstPlayer-rolldice").click(function(event){
-        firstplayer.roll=diceThrow();
+        firstplayer.roll=throwdice();
         $("#roll-dice-1").text(firstplayer.roll);
-        firstplayer.rollone();
-        $("#round1-total-score").text(firstplayer.dicescore);
+        firstplayer.roll();
+        $("#round1-total-score").text(firstplayer.tempscore);
 
     });
     $("button#secondPlayer-rolldice").click(function(event){
-        secondplayer.roll=diceThrow();
+        secondplayer.roll=throwdice();
         $("#roll-dice-1").text(secondplayer.roll);
         secondplayer.rollone();
-        $("#round2-total-score").text(secondplayer.dicescore);
+        $("#round2-total-score").text(secondplayer.tempscore);
 
     });
-    $("button#firstPlayer-holddice").click(function(event){
+    $("button#firstPlayer-holdice").click(function(event){
         firstplayer.hold();
         $("#total1-score").text(firstplayer.totalscore);
         $("#round1-total-score").empty();
