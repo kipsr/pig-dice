@@ -9,7 +9,7 @@ var throwdice=function(){
 }
 function Player(turn){
     this.roll=0;
-    this.tempscore=0;
+    this.diescore=0;
     this.totalscore=0;
     this.turn=turn;
     this.nameofPlayer;   
@@ -17,16 +17,16 @@ function Player(turn){
 //checking for one
 Player.prototype.rollone=function(){
     if(this.roll===1){
-        this.tempscore=0;
+        this.diescore=0;
         alert(this.nameofPlayer+"your turn is over you have rolled once")
     }
     else{
-        this.tempscore+=this.roll;
+        this.diescore+=this.roll;
     }
 };
 Player.prototype.hold=function(){
-    this.totalscore+=this.tempscore;
-    this.tempscore=o;
+    this.totalscore+=this.diescore;
+    this.diescore=o;
     alert(this.nameofPlayer+"you time of playing is over, next player")
 }
 Player.prototype.winnerCheck=function(){
@@ -36,7 +36,7 @@ Player.prototype.winnerCheck=function(){
 
 Player.prototype.newGame=function(){
     this.roll=0;
-    this.tempscore=0;
+    this.diescore=0;
     this.totalscore=0;
     this.nameofPlayer="";
 
@@ -51,7 +51,7 @@ $(document).ready(function(){
         firstplayern=new Player(true);
         secondplayer=new Player(false);
         $(".player").show();
-        $("#start-game-again").hide();
+        $("#start-game-again").show();
 
         var firstplayerName=$(".playerone").val();
         $("#firstplayer").text(firstplayerName);
@@ -64,11 +64,11 @@ $(document).ready(function(){
 
     });
     $("button#start-game-again").click(function(event){
-       $(".player").hide();
+       $(".player").show();
        clearvalues();    
        
-    //    firstplayer.newGame();
-    //    secondplayer.newGame();
+    //  firstplayer.newGame();
+    //  secondplayer.newGame();
        $("#round1-total-score").empty();
        $("#total1-score").empty();
        $("#roll-dice-1").empty();
@@ -82,14 +82,14 @@ $(document).ready(function(){
         firstplayer.roll=throwdice();
         $("#roll-dice-1").text(firstplayer.roll);
         firstplayer.roll();
-        $("#round1-total-score").text(firstplayer.tempscore);
+        $("#round1-total-score").text(firstplayer.diescore);
 
     });
     $("button#secondPlayer-rolldice").click(function(event){
         secondplayer.roll=throwdice();
         $("#roll-dice-1").text(secondplayer.roll);
         secondplayer.rollone();
-        $("#round2-total-score").text(secondplayer.tempscore);
+        $("#round2-total-score").text(secondplayer.diescore);
 
     });
     $("button#firstPlayer-holdice").click(function(event){
