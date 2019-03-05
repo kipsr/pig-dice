@@ -15,7 +15,7 @@ function Player(turn){
     this.Player;   
 }
 //checking for one
-Player.prototype.roll=function(){
+Player.prototype.rollone=function(){
     if(this.roll===1){
         this.diescore=0;
         alert(this.Player+"your turn is over you have rolled once")
@@ -103,7 +103,7 @@ $(document).ready(function(){
     });
     $("button#secondPlayer-holddice").click(function(event){
         secondplayer.hold();
-        $("#total2-score").text(firstplayer.overallscore);
+        $("#total2-score").text(firstplayer.totalscore);
         $("#round2-total-score").empty();
         $("#roll-dice-2").empty();
         secondplayer.winnerCheck();
