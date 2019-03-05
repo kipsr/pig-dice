@@ -3,42 +3,42 @@
 var firstplayer="";
 var secondplayer="";
 
-var throwdice=function(){
+var diceroll=function(){
     return Math.floor(6 * Math.random())+1;
 
 }
 function Player(turn){
     this.roll=0;
     this.diescore=0;
-    this.totalscore=0;
+    this.overallscore=0;
     this.turn=turn;
-    this.nameofPlayer;   
+    this.Player;   
 }
 //checking for one
-Player.prototype.rollone=function(){
+Player.prototype.roll=function(){
     if(this.roll===1){
         this.diescore=0;
-        alert(this.nameofPlayer+"your turn is over you have rolled once")
+        alert(this.Player+"your turn is over you have rolled once")
     }
     else{
         this.diescore+=this.roll;
     }
 };
 Player.prototype.hold=function(){
-    this.totalscore+=this.diescore;
+    this.overallscore+=this.diescore;
     this.diescore=o;
-    alert(this.nameofPlayer+"you time of playing is over, next player")
+    alert(this.Player+"you time of playing is over, next player")
 }
 Player.prototype.winnerCheck=function(){
-    if(this.totalscore>=100);
-    alert(this.nameofPlayer+"WINNER!!!");
+    if(this.overallscore>=100);
+    alert(this.Player+"WINNER!!!");
 }
 
 Player.prototype.newGame=function(){
     this.roll=0;
     this.diescore=0;
-    this.totalscore=0;
-    this.nameofPlayer="";
+    this.overallscore=0;
+    this.Player="";
 
 }
 var clearvalues=function(){
@@ -79,14 +79,14 @@ $(document).ready(function(){
 
     });
     $("button#firstPlayer-rolldice").click(function(event){
-        firstplayer.roll=throwdice();
+        firstplayer.roll=diceroll();
         $("#roll-dice-1").text(firstplayer.roll);
         firstplayer.roll();
         $("#round1-total-score").text(firstplayer.diescore);
 
     });
     $("button#secondPlayer-rolldice").click(function(event){
-        secondplayer.roll=throwdice();
+        secondplayer.roll=diceroll();
         $("#roll-dice-1").text(secondplayer.roll);
         secondplayer.rollone();
         $("#round2-total-score").text(secondplayer.diescore);
@@ -94,7 +94,7 @@ $(document).ready(function(){
     });
     $("button#firstPlayer-holdice").click(function(event){
         firstplayer.hold();
-        $("#total1-score").text(firstplayer.totalscore);
+        $("#total1-score").text(firstplayer.overallscore);
         $("#round1-total-score").empty();
         $("#roll-dice-1").empty();
         firstplayer.winnerCheck();
@@ -103,7 +103,7 @@ $(document).ready(function(){
     });
     $("button#secondPlayer-holddice").click(function(event){
         secondplayer.hold();
-        $("#total2-score").text(firstplayer.totalscore);
+        $("#total2-score").text(firstplayer.overallscore);
         $("#round2-total-score").empty();
         $("#roll-dice-2").empty();
         secondplayer.winnerCheck();
