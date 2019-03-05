@@ -31,13 +31,12 @@ If you'd like to request a new function, feel free to do so by contacting us. Pl
 
 
 
-Technologies Used
+# Technologies Used
 HTML,CSS,Javacript Bootsrap and Jquery
 
 Support and contact details
 mishrakiprop@gmail.com
 
-License
+# License
 
-Copyright (c) 2019 Kipkorir Cornelius
-
+Copyright (c) 2019 [Kipkorir Cornelius]
